@@ -1,6 +1,7 @@
 package com.coderscampus.Assignment3;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,7 +14,6 @@ public class UserService {
 
 		User user = null;
 		infoStored();
-
 		if (this.user_ != null) {
 
 			for (int i = 0; (i < this.user_.length && this.user_[i] != null); i++)
@@ -45,9 +45,10 @@ public class UserService {
 			BufferedReader reader = null;
 
 			try {
-				FileReader file = new FileReader(
-						"C:\\Users\\16476\\git\\Akshay-Assignment3\\src\\com\\coderscampus\\Assignment3\\data.txt");
-
+					
+				FileReader file = new FileReader("data.txt");
+				
+				
 				reader = new BufferedReader(file);
 				String text = null;
 				int i = 0;
@@ -86,9 +87,9 @@ public class UserService {
 		BufferedReader reader = null;
 
 		try {
-			reader = new BufferedReader(new FileReader(
-					"C:\\Users\\16476\\git\\Akshay-Assignment3\\src\\com\\coderscampus\\Assignment3\\data.txt"));
+			FileReader file = new FileReader("data.txt");
 
+			reader = new BufferedReader(file);
 			while (reader.readLine() != null) {
 				userCount++;
 			}
